@@ -1,12 +1,17 @@
 const express = require('express')
+const exphbs = require('express-handlebars')
 
 require('./config/mongoose')
 
 const app = express()
 const port = 3000
 
+// view template engine
+app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
+app.set('view engine', 'handlebars')
+
 app.get('/', (req, res) => {
-  res.send(`This is a new web app!`)
+  res.render('index')
 })
 
 app.listen(port, () => {
