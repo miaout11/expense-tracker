@@ -3,37 +3,31 @@
     {
       "name": "Dinner",
       "date": "2022-11-05 18:00:00.000Z",
-      "category": "food and drink",
+      "category": "餐飲食品",
       "amount": "200"
     },
     {
       "name": "Rent",
       "date": "2022-11-05 20:30:00.000Z",
-      "category": "daily necessities",
+      "category": "家居物業",
       "amount": "10000"
     },
     {
       "name": "Bus Ticket",
       "date": "2022-11-06 16:00:00.000Z",
-      "category": "transportation",
+      "category": "交通出行",
       "amount": "50"
     },
     {
       "name": "See a movie",
       "date": "2022-11-06 18:40:00.000Z",
-      "category": "entertainment",
+      "category": "休閒娛樂",
       "amount": "300"
-    },
-    {
-      "name": "English course",
-      "date": "2022-11-07 13:00:00.000Z",
-      "category": "educate",
-      "amount": "1000"
     },
     {
       "name": "gym ticket",
       "date": "2022-11-07 20:00:00.000Z",
-      "category": "sports",
+      "category": "其他",
       "amount": "100"
     }
   ]

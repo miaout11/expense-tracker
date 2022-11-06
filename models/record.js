@@ -9,12 +9,18 @@ const recordSchema = new mongoose.Schema({
     type: Date,
     required: true
   },
-  category: {
-    type: String,
+  categoryId: {
+    type: Number,
     required: true
   },
   amount: {
     type: Number,
+    required: true
+  },
+  userId: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+    index: true,
     required: true
   }
 })
