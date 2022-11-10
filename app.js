@@ -3,7 +3,7 @@ const exphbs = require('express-handlebars')
 const session = require('express-session')
 
 const routes = require('./routes')
-
+const userPassport = require('./config/passport')
 require('./config/mongoose')
 
 const app = express()
@@ -22,6 +22,8 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }))
+
+userPassport(app)
 
 app.use(routes)
 
