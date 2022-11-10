@@ -1,5 +1,6 @@
 const express = require('express')
 const exphbs = require('express-handlebars')
+const session = require('express-session')
 
 const routes = require('./routes')
 
@@ -15,6 +16,12 @@ app.set('view engine', 'handlebars')
 app.use(express.urlencoded({ extended: true }))
 // setting static files
 app.use(express.static('public'))
+// setting express-session
+app.use(session({
+  secret: 'ThisIsMySecret',
+  resave: false,
+  saveUninitialized: true
+}))
 
 app.use(routes)
 
