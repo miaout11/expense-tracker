@@ -1,0 +1,58 @@
+<div class="row mt-5 form">
+  <div class="col-md-10 col-lg-6 m-auto">
+    <div class="card card-body p-5">
+      <pre class="text-center">必填欄位*<span class="h1">        請輸入支出明細</span></pre>
+
+      <form action="/records" method="POST" class="container form-group">
+        {{!-- name --}}
+        <div class="row mt-3">
+          <div class="col-4">
+            <label for="name" class="col-form-label col-10 text-center">支 出 名 稱*</label>
+          </div>
+          <div class="col-8">
+            <input type="text" id="name" class="form-control" name="name" placeholder="請輸入支出名稱"
+              value="{{ record.name }}" required>
+          </div>
+        </div>
+        {{!-- date --}}
+        <div class="row mt-3">
+          <div class="col-4">
+            <label for="date" class="col-form-label col-10 text-center">支 出 日 期*</label>
+          </div>
+          <div class="col-8">
+            <input type="text" id="date" class="form-control" name="date" placeholder="請輸入支出日期"
+              value="{{ record.name }}" required>
+          </div>
+        </div>
+        {{!-- category --}}
+        <div class="row mt-3">
+          <div class="col-4">
+            <label for="category" class="col-form-label col-10 text-center">支 出 類 別*</label>
+          </div>
+          <div class="col-8">
+            <select class="form-control" id="category" name="category" required>
+              <option selected>請選擇類別</option>
+              <option value="1">家居物業</option>
+              <option value="2">交通出行</option>
+              <option value="3">休閒娛樂</option>
+              <option value="4">餐飲食品</option>
+              <option value="5">其他</option>
+            </select>
+          </div>
+        </div>
+        {{!-- amount --}}
+        <div class="row mt-3">
+          <div class="col-4">
+            <label for="amount" class="col-form-label col-10 text-center">支 出 金 額*</label>
+          </div>
+          <div class="col-8">
+            <input type="number" min="0" id="amount" name="amount" class="form-control" placeholder="請輸入支出金額" required>
+          </div>
+          {{!-- create button --}}
+          <div class="row mt-5">
+            <button type="submit" class="col-4 btn btn-outline-info btn-block mx-auto">新增支出</button>
+          </div>
+      </form>
+    </div>
+  </div>
+</div>

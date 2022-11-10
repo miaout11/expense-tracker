@@ -33,7 +33,7 @@
         {{!-- 修改及刪除 --}}
         <div class="edit-del d-inline px-1 col-4 text-end">
           <a class="btn btn-success" href="/record//edit">修改</a>
-          <form action="/record/?_method=DELETE" style="display: inline" method="POST">
+          <form action="/records/?_method=DELETE" style="display: inline" method="POST">
             <button class="btn btn-md btn-dark" style="display: inline" type="submit">刪除</button>
           </form>
         </div>
@@ -42,6 +42,6 @@
   </ul>
   {{!-- create button --}}
   <div class="d-flex justify-content-center mt-5">
-    <a href="/record/new"><button class="btn btn-secondary mb-3">新增支出</button></a>
+    <a href="/records/new"><button class="btn btn-secondary mb-3">新增支出</button></a>
   </div>
 </section>
