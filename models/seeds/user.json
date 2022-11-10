@@ -1,0 +1,24 @@
+{
+  "results": [
+    {
+      "name": "user1",
+      "email": "user1@example.com",
+      "password": "0123",
+      "recordIndex": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "name": "user2",
+      "email": "user2@example.com",
+      "password": "0123",
+      "recordIndex": [
+        3,
+        4,
+        5
+      ]
+    }
+  ]
+}

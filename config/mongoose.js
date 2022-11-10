@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 // connect to mongoDB
-mongoose.connect(process.env.MONGODB_ET_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb://localhost/expense-tracker', { useNewUrlParser: true, useUnifiedTopology: true })
 
 // db connect status
 const db = mongoose.connection
