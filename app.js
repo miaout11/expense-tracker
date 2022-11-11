@@ -1,6 +1,7 @@
 const express = require('express')
 const exphbs = require('express-handlebars')
 const session = require('express-session')
+const methodOverride = require('method-override')
 
 const routes = require('./routes')
 
@@ -19,6 +20,8 @@ app.set('view engine', 'handlebars')
 app.use(express.urlencoded({ extended: true }))
 // setting static files
 app.use(express.static('public'))
+// setting methodOverride
+app.use(methodOverride('_method'))
 // setting express-session
 app.use(session({
   secret: 'ThisIsMySecret',
