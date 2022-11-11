@@ -20,10 +20,10 @@
   {{!-- all expense data--}}
   <ul class="list-group">
     {{#each expenses}}
-    <li class="list-group-item d-flex p-0 border-0">
-      <div class="col-8 d-flex align-items-center py-2 rounded">
-        <i class="{{getIcon this.categoryId}} fa-xl text-danger"></i>
-        <div class="d-inline px-1 col-8">
+    <li class="list-group-item d-flex p-0">
+      <div class="col-8 d-flex align-items-center p-2">
+        <i class="{{getIcon this.categoryId}} fa-xl text-danger" style="width: 20px;"></i>
+        <div class="d-inline px-3 col-8">
           <h5>{{this.name}}</h5>
           <small class="date">{{this.date}}</small>
         </div>
@@ -31,7 +31,7 @@
           <h5>{{this.amount}}</h5>
         </div>
         {{!-- edit and delete button--}}
-        <div class="edit-del d-inline px-1 col-6 text-end">
+        <div class="edit-del d-inline px-1 col-7 text-end">
           <a class="btn btn-success" href="/records/{{this._id}}/edit">修改</a>
           <form action="/records/{{this._id}}?_method=DELETE" style="display: inline" method="POST">
             <button class="btn btn-md btn-dark" style="display: inline" type="submit">刪除</button>

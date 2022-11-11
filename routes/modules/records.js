@@ -5,17 +5,12 @@ const Category = require('../../models/category')
 
 // setting new page
 router.get('/new', (req, res) => {
-  const categoryId = Number(req.query.categorySelector)
-  const categories = []
   Category.find()
     .lean()
-    .then(category => categories.push(...category))
-    .then(categories.forEach(category => {
-      if (category.id === categoryId) {
-        category.selected = true
-      }
-    }))
-  return res.render('new', { categories })
+    .then(categories => {
+      res.render('new', { categories })
+    })
+    .catch(error => console.log(error))
 })
 // create record
 router.post('/', (req, res) => {
@@ -36,17 +31,29 @@ router.post('/', (req, res) => {
 router.get('/:id/edit', (req, res) => {
   const userId = req.user._id
   const _id = req.params.id
-  return Record.findOne({ _id, userId })
+  const categories = []
+  Category.find()
     .lean()
-    .then(record => res.render('edit', { record }))
-    .catch(error => console.log(error))
+    .then(category => categories.push(...category))
+    .catch(error => console.error(error))
+  Record.findOne({ _id, userId })
+    .lean()
+    .then(record => {
+      categories.forEach(category => {
+        if (category.id === record.categoryId) {
+          category.selected = true
+        }
+      })
+      res.render('edit', { record, categories })
+    })
+    .catch(error => console.error(error))
 })
 // update record
 router.put('/:id', (req, res) => {
   const userId = req.user._id
   const _id = req.params.id
-  return Record.findOneAndUpdate({ _id, userId }, req.body, { returnNewDocument: true })
-    .then(() => res.redirect(`/records/${_id}`))
+  Record.findByIdAndUpdate({ _id, userId }, req.body)
+    .then(() => res.redirect('/'))
     .catch(error => console.log(error))
 })
 
