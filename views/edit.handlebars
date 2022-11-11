@@ -30,7 +30,7 @@
             <label for="category" class="col-form-label col-10 text-center">支 出 類 別*</label>
           </div>
           <div class="col-8">
-            <select class="form-control" name="categoryId" required>
+            <select class="form-control" name="categoryId">
               {{#each categories}}
               <option value="{{this.id}}" {{#if this.selected}}selected{{/if}}>{{this.name}}</option>
               {{/each}}

@@ -1,3 +1,7 @@
+const bcrypt = require('bcryptjs')
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
 const Record = require('../record')
 const User = require('../user')
 const records = require('./record.json').results
@@ -8,9 +12,16 @@ const db = require('../../config/mongoose')
 db.once('open', async () => {
   // create user
   for (const [user_index, user] of users.entries()) {
-    const userCreate = await User.create({
-      ...user
-    })
+    const userCreate =
+      await bcrypt
+        .genSalt(10)
+        .then(salt => bcrypt.hash(user.password, salt))
+        .then(hash => User.create({
+          name: user.name,
+          email: user.email,
+          password: hash
+        }))
+
     // deal with user and record relation
     const userSeedRecord = []
     records.forEach((record, record_index) => {

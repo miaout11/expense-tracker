@@ -30,10 +30,9 @@
             <label for="category" class="col-form-label col-10 text-center">支 出 類 別*</label>
           </div>
           <div class="col-8">
-            <select class="form-control" name="categoryId" required>
-              <option>請選擇類別</option>
+            <select class="form-control" name="categoryId">
               {{#each categories}}
-              <option value="{{this.id}}">{{this.name}}</option>
+              <option value="{{ this.id }}">{{ this.name }}</option>
               {{/each}}
             </select>
           </div>

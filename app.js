@@ -4,15 +4,17 @@ const session = require('express-session')
 const methodOverride = require('method-override')
 const flash = require('connect-flash')
 
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
+
 const routes = require('./routes')
-
 const getIcon = require('./public/javascript/handlebars-helper')
-
 const userPassport = require('./config/passport')
 require('./config/mongoose')
 
 const app = express()
-const port = 3000
+const PORT = process.env.PORT
 
 // view template engine
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
@@ -25,7 +27,7 @@ app.use(express.static('public'))
 app.use(methodOverride('_method'))
 // setting express-session
 app.use(session({
-  secret: 'ThisIsMySecret',
+  secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: true
 }))
@@ -50,6 +52,6 @@ app.use((req, res, next) => {
 
 app.use(routes)
 
-app.listen(port, () => {
-  console.log(`Express web app is runing on http://locallhost:${port}`)
+app.listen(PORT, () => {
+  console.log(`Express web app is runing on http://locallhost:${PORT}`)
 })
