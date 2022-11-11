@@ -1,18 +1,30 @@
 const express = require('express')
 const router = express.Router()
 const Record = require('../../models/record')
+const Category = require('../../models/category')
 
-// serring new page
+// setting new page
 router.get('/new', (req, res) => {
-  res.render('new')
+  const categoryId = Number(req.query.categorySelector)
+  const categories = []
+  Category.find()
+    .lean()
+    .then(category => categories.push(...category))
+    .then(categories.forEach(category => {
+      if (category.id === categoryId) {
+        category.selected = true
+      }
+    }))
+  return res.render('new', { categories })
 })
 // create record
 router.post('/', (req, res) => {
-  const { name, date, categoryID, amount } = req.body
+  const userId = req.user._id
+  const { name, date, categoryId, amount } = req.body
   return Record.create({
     name,
     date,
-    categoryID,
+    categoryId,
     amount,
     userId
   })

@@ -11,6 +11,7 @@ router.get('/', (req, res) => {
     .lean()
     .then(category => categories.push(...category))
     .then(() => {
+      // get all expenses
       if (!categoryId) {
         Record.find({ userId })
           .lean()
@@ -27,6 +28,7 @@ router.get('/', (req, res) => {
             })
             return res.render('index', { categories, expenses, totalAmount })
           })
+        // get slected category expenses
       } else {
         Record.find({ userId, categoryId })
           .lean()
