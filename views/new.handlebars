@@ -20,7 +20,7 @@
             <label for="date" class="col-form-label col-10 text-center">支 出 日 期*</label>
           </div>
           <div class="col-8">
-            <input type="text" id="date" class="form-control" name="date" placeholder="請輸入支出日期"
+            <input type="date" class="form-control" name="date" min="2020-01-01" max="2025-12-31"
               value="{{ record.name }}" required>
           </div>
         </div>

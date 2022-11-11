@@ -3,6 +3,9 @@ const exphbs = require('express-handlebars')
 const session = require('express-session')
 
 const routes = require('./routes')
+
+const getIcon = require('./public/javascript/handlebars-helper')
+
 const userPassport = require('./config/passport')
 require('./config/mongoose')
 

@@ -2,37 +2,37 @@
   "results": [
     {
       "name": "Dinner",
-      "date": "2022-11-05 18:00:00.000Z",
+      "date": "2022-11-05",
       "categoryId": "4",
       "amount": "200"
     },
     {
       "name": "Rent",
-      "date": "2022-11-05 20:30:00.000Z",
+      "date": "2022-11-05",
       "categoryId": "1",
       "amount": "10000"
     },
     {
       "name": "Bus Ticket",
-      "date": "2022-11-06 16:00:00.000Z",
+      "date": "2022-11-06",
       "categoryId": "2",
       "amount": "50"
     },
     {
       "name": "See a movie",
-      "date": "2022-11-06 18:40:00.000Z",
+      "date": "2022-11-06",
       "categoryId": "3",
       "amount": "300"
     },
     {
       "name": "gym ticket",
-      "date": "2022-11-07 20:00:00.000Z",
+      "date": "2022-11-07",
       "categoryId": "5",
       "amount": "100"
     },
     {
       "name": "coffee",
-      "date": "2022-11-08 20:00:00.000Z",
+      "date": "2022-11-08",
       "categoryId": "4",
       "amount": "50"
     }
