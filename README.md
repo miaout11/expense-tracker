@@ -1,4 +1,4 @@
-# 家庭記帳本 Expense-tracker - 簡介
+# Expense-tracker - 簡介
 
 可以用來記錄自己的每一筆消費名稱、金額、類別及日期。
 
